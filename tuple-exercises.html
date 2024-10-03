@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuple Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .exercise {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .important-note {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #ff5722;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tuple Exercises</h1>
+
+    <div class="important-note">
+        <p><span class="highlight">Important Note:</span> In the following three exercises, tuples can be substituted with lists without changing the behavior of the code. However, this is not always true in general Python programming.</p>
+        <p>For these examples, you can think of tuples as immutable lists. But remember, there are cases where tuples provide special behavior that lists cannot replicate. Exercise 4 will demonstrate such a case.</p>
+    </div>
+
+
+    <div class="exercise">
+        <h2>Exercise 1: Function Return Values and Conditional Statements</h2>
+        <p>Create a function called <code>analyze_scores</code> that takes a tuple of three test scores as an argument. The function should return a tuple containing the average score and a string indicating the performance level based on the following criteria:</p>
+        <ul>
+            <li>If the average is 90 or above, return "Excellent"</li>
+            <li>If the average is between 70 and 89, return "Good"</li>
+            <li>If the average is below 70, return "Needs Improvement"</li>
+        </ul>
+        <p>Then, write a main program that calls this function with different score tuples and prints the results.</p>
+        <pre>
+def analyze_scores(scores):
+    # Your code here
+
+# Test the function
+test_scores = (85, 92, 78)
+result = analyze_scores(test_scores)
+print(f"Average: {result[0]}, Performance: {result[1]}")
+        </pre>
+    </div>
+
+    <div class="exercise">
+        <h2>Exercise 2: Tuple Unpacking in a Loop with Dictionary</h2>
+        <p>You are given a list of tuples representing products in a store. Each tuple contains (product_name, price, quantity). Create a program that:</p>
+        <ol>
+            <li>Calculates the total value of each product (price * quantity)</li>
+            <li>Stores the results in a dictionary with the product name as the key</li>
+            <li>Prints out the products with a total value greater than $100</li>
+        </ol>
+        <pre>
+products = [
+    ("Laptop", 1000, 3),
+    ("Mouse", 25, 10),
+    ("Monitor", 200, 2),
+    ("Keyboard", 50, 5)
+]
+
+inventory_value = {}
+
+# Your code here
+
+# Print products with total value > $100
+        </pre>
+    </div>
+
+    <div class="exercise">
+        <h2>Exercise 3: Nested Tuples and List Comprehension</h2>
+        <p>You are given a tuple of tuples representing a small database of employees. Each inner tuple contains (name, department, salary). Write a program that:</p>
+        <ol>
+            <li>Uses a list comprehension to create a list of all employees in the "Engineering" department</li>
+            <li>Calculates and prints the average salary of engineers</li>
+            <li>Uses a conditional statement to print whether the Engineering department's average salary is above or below the company's average salary</li>
+        </ol>
+        <pre>
+employees = (
+    ("Alice", "Engineering", 80000),
+    ("Bob", "Sales", 65000),
+    ("Charlie", "Engineering", 90000),
+    ("David", "Marketing", 70000),
+    ("Eve", "Engineering", 85000)
+)
+
+# Your code here
+        </pre>
+    </div>
+    
+    <div class="exercise">
+        <h2>Exercise 4: Tuples as Dictionary Keys</h2>
+        <p>This exercise demonstrates a case where <span class="highlight">tuples cannot be replaced by lists</span>. Create a program that:</p>
+        <ol>
+            <li>Uses tuples of (x, y) coordinates as keys in a dictionary to store point data</li>
+            <li>Tries to do the same with lists and handles the resulting error</li>
+            <li>Explains why this operation works with tuples but not with lists</li>
+        </ol>
+        <pre>
+# Dictionary with tuple keys (this works)
+point_data = {
+    (0, 0): "Origin",
+    (1, 0): "Unit X",
+    (0, 1): "Unit Y"
+}
+
+# Try to create a dictionary with list keys (this will raise an error)
+try:
+    invalid_point_data = {
+        [0, 0]: "Origin",
+        [1, 0]: "Unit X",
+        [0, 1]: "Unit Y"
+    }
+except TypeError as e:
+    print(f"Error: {e}")
+
+# Explain why this happens
+# Your explanation here
+        </pre>
+    </div>
+</body>
+</html>
